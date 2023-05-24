@@ -19,4 +19,4 @@ else{
     );
 }
 
-module.exports.sequelize;
+module.exports = sequelize;

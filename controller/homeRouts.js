@@ -29,7 +29,7 @@ router.get("/search", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const foodData = await Post.findAll({
+    const postData = await Post.findAll({
       include: [
         {
           model: User,
@@ -41,9 +41,9 @@ router.get("/", async (req, res) => {
         },
       ],
     });
-
-    const foods = await Promise.all(
-      foodData.map(async (f) => {
+    
+    const posts = await Promise.all(
+      postData.map(async (f) => {
         const comments = f.comments;
         const users = await Promise.all(
           comments.map((c) =>
@@ -57,12 +57,12 @@ router.get("/", async (req, res) => {
         return { ...f.toJSON(), comments: commentsWithUsernames };
       })
     );
-
     res.render("homepage", {
       posts,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
@@ -72,7 +72,7 @@ router.get("/user/:id", async (req, res) => {
     const userData = await User.findByPk(req.params.id, {
       include: [
         {
-          model: Food,
+          model: Post,
         },
       ],
     });
@@ -81,8 +81,8 @@ router.get("/user/:id", async (req, res) => {
       ...user,
     });
   } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+    console.log("h");
+    res.status(500).json({err: "its here 1"});
   }
 });
 
@@ -90,7 +90,7 @@ router.get("/profile", withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
-      include: [{ model: Food }],
+      include: [{ model: Post }],
     });
 
     const user = userData.get({ plain: true });
@@ -100,7 +100,7 @@ router.get("/profile", withAuth, async (req, res) => {
       logged_in: true,
     });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json({err: "its here2"});
   }
 });
 
@@ -125,8 +125,7 @@ router.get("/post/:id", async (req, res) => {
     const post = postData.get({ plain: true });
     res.json(post);
   } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+    res.status(500).json({err: "its here3"});
   }
 });
 

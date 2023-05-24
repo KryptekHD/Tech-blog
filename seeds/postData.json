@@ -1,0 +1,32 @@
+[{    
+"post_name": "Hello people",  
+"catagorie":"everyone",     
+"description": "this is a post ",    
+"date_created": "2022-01-10"   
+  }, 
+  {    
+"post_name": "random",  
+"catagorie":"random",     
+"description": "this is just a random post to test ",    
+"date_created": "2000-12-01"   
+  }, 
+  {    
+"post_name": "post",  
+"catagorie":"people",     
+"description": "people are all people ",    
+"date_created": "2012-09-18"   
+  }, 
+  {    
+"post_name": "what a post",  
+"catagorie":"everyone",     
+"description": "well lets look at  it what really is a post ",    
+"date_created": "2023-01-10"   
+  }, 
+  {    
+    "post_name": "Hello ",  
+    "catagorie":"main",     
+    "description": "this is a post ",    
+    "date_created": "2014-02-11"   
+      }
+  
+]

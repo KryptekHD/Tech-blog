@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-auto">
+    <h2 class="welcome">{{name}}</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New Post:</h3>
+
+    <form class="form">
+      <div class="form-group">
+        <label for="post-name">Post name:</label>
+        <input class="form-input" type="text" id="post-name" name="post-name" />
+      </div>
+      <div class="form-group">
+        <label for="post-desc">Catagorie:</label>
+        <input class="form-input" type="text" id="post-catagorie" name="post-desc" />
+      </div>
+      <div class="form-group">
+        <label for="post-desc">Description:</label>
+        <input class="form-input" type="text" id="post-desc" name="post-desc" />
+      </div>
+    </form>
+     <button id='create' type="submit" class="btn btn-primary">Create</button>
+  </div>
+
+  {{#if post.length}}
+  <div class="col-md-6 project-list">
+    <h3>Posts:</h3>
+
+    {{#each post as |posts| }}
+<div class="project-box">
+  <div class="box-header">
+    <h2>{{posts.post_name}}</h2>
+     <div id={{posts.user_id}} class="username">
+      <p>{{posts.user.name}}</p>
+      <p>{{posts.user.username}}</p>
+    </div>
+  </div>
+  <div class="box-description">
+    <p>{{posts.description}}</p>
+    <p>{{format_date posts.date_created}}</p>
+    <button id='delete-btn' class="btn" data-id="{{posts.id}}">Delete Post</button>
+  </div>
+</div>
+{{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="https://widget.cloudinary.com/v2.0/global/all.js"></script>
+<script src="./js/profile.js"></script>
+

@@ -1,0 +1,32 @@
+{{#each posts as |post| }}
+<div class="project-box">
+  <div class="box-header">
+    <h2 class="foodname">{{post.post_name}}</h2>
+    <p>{{format_date post.date_created}}</p>
+    {{!-- <img src={{food.image}} alt=""> --}}
+
+
+     <div class="username">
+      <a href="/user/{{post.user_id}}">{{post.user.name}}</a>
+      <a href="/user/{{post.user_id}}">{{post.user.username}}</a>
+    </div>
+  </div>
+  <div class="box-description">
+    <p>Catagorie: {{post.catagorie}}</p>
+    <p>Description: {{post.description}}</p>
+  </div>
+  <div class="comment-section"><h3>Comments</h3>
+  {{#each comments as |comment| }}
+      
+        <div class="comment">  <a href="/user/{{comment.user_id}}">{{comment.username}}</a>
+        <p>{{comment.comment}}</p> </div>
+      {{/each}}
+      <form class="comment-form">
+      <textarea class="user-comment" placeholder="Write a comment"></textarea>
+      <button class="comment-button" data-id="{{post.id}}">Submit</button>
+    </form>
+  </div>
+  </div>
+{{/each}}
+
+<script src="./js/comment.js"></script>

@@ -1,0 +1,70 @@
+[{
+    "name": "Jane Doe",
+    "email": "doeJane@gmail.com",
+    "password": "password123",
+    "username": "doeJane"
+},
+{
+    "name": "John Doe",
+    "email": "doeJohn@gmail.com",
+    "password": "password123",
+    "username": "doejohn"
+},
+{
+    "name": "David Brandy",
+    "email": "brandyDavid@hotmail.com",
+    "password": "password123",
+    "username": "brandyDavid"
+},
+{
+    "name": "Rachel",
+    "email": "rachel@gmail.com",
+    "password": "password123",
+    "username": "rachel123"
+},
+{
+    "name": "Denzel Washington",
+    "email": "denzel@gmail.com",
+    "password": "password123",
+    "username": "denzelWashington"
+},
+{
+    "name": "Adrian Kempe",
+    "email": "adriankempe@gmail.com",
+    "password": "password123",
+    "username": "adrianKempe"
+},
+{
+    "name": "Ted Lasso",
+    "email": "teddy@gmail.com",
+    "password": "password123",
+    "username": "tedLasso"
+},
+{
+    "name": "Anthony Soprano",
+    "email": "soprano@gmail.com",
+    "password": "password123",
+    "username": "anthonySoprano"
+},
+{
+    "name": "John Snow",
+    "email": "jsnow@gmail.com",
+    "password": "password123",
+    "username": "kinginthenorth"
+},
+{
+    "name": "Walter White",
+    "email": "w.white@gmail.com",
+    "password": "password123",
+    "username": "heisenbergblue"
+},
+{
+    "name": "Will Smith",
+    "email": "bigwilly@gmail.com",
+    "password": "password123",
+    "username": "thefreshprince"
+}]
+
+
+
+
